@@ -26,6 +26,26 @@ class App extends Component {
   render() {
     const { items } = this.state;
 
+    if (localStorage.getItem('dragged') === null) {
+      localStorage.setItem('dragged', JSON.stringify({ items }));
+    }
+    console.log(items);
+
+    let savedColumns = JSON.parse(localStorage.getItem('dragged'));
+    for (var columnIndex in savedColumns) {
+      // items.push(savedColumns[columnIndex]);
+    }
+
+    function handleColumnDrag(sourceIndex, destinationIndex) {
+      const sourceColumn = savedColumns[sourceIndex];
+      const destinationColumn = savedColumns[destinationIndex];
+
+      // Swapping the column order
+      savedColumns[sourceIndex] = destinationColumn;
+      savedColumns[destinationIndex] = sourceColumn;
+      localStorage.setItem('dragged', JSON.stringify(savedColumns));
+    }
+
     return (
       <div className="App">
         <div className="wrapper">
