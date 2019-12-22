@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import EdiText from 'react-editext';
 
 export default class Editable extends Component {
@@ -8,7 +7,7 @@ export default class Editable extends Component {
   };
   render() {
     return (
-      <div className="container">
+      <div className="container" style={{ padding: '0 10px' }}>
         <EdiText
           type="textarea"
           inputProps={{

@@ -1,23 +1,23 @@
 .App {
-  display: flex;
   background-color: rgb(186, 186, 186);
   min-height: 100vh;
 }
-.wrapper {
+.App,
+.wrapper,
+.container,
+.draggable-column,
+.draggable-container {
   display: flex;
 }
 .container,
 .draggable-column {
   min-height: 100%;
-  display: flex;
   align-items: center;
-  border: 1px solid grey;
+  box-shadow: inset 0 0 0 1px #e0e0e0;
 }
 .draggable-container {
-  display: flex;
   flex-basis: 67%;
 }
-
 .column {
   background-color: #e8e8e8;
   flex-basis: 33%;
@@ -26,9 +26,7 @@
 .draggable-column {
   background-color: #efeff7;
   flex-basis: 50%;
-  align-self: stretch;
 }
-
 .draggable-column > div {
   display: flex;
   justify-content: center;
@@ -42,7 +40,9 @@
   .column {
     flex-direction: column;
   }
-  .column {
+  .column,
+  .draggable-column {
     width: 100%;
+    padding: 30px 0;
   }
 }

@@ -26,10 +26,6 @@ class App extends Component {
   render() {
     const { items } = this.state;
 
-    if (localStorage.getItem('dragged') === null) {
-      localStorage.setItem('dragged', JSON.stringify(items));
-    }
-
     return (
       <div className="App">
         <div className="wrapper">
