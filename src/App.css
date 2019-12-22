@@ -26,6 +26,7 @@
 .draggable-column {
   background-color: #efeff7;
   flex-basis: 50%;
+  cursor: move;
 }
 .draggable-column > div {
   display: flex;
